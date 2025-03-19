@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма в таблице</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+        }
+    </style>
+    <script>
+        function submitForm() {
+            alert('Форма отправлена!');
+        }
+
+        function openFile() {
+            alert('Обзор файлов открылся!');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <table>
+                <tr>
+                    <td><button type="button" onclick="submitForm()">Отправить</button></td>
+                    <td colspan="2"><button type="button">Кнопка с подписью и рисунком</button></td>
+                    <td><button type="reset">Сбросить</button></td>
+                </tr>
+                <tr>
+                    <td>Вопрос 1</td>
+                    <td colspan="3"><input type="text" name="q1"></td>
+                </tr>
+                <tr>
+                    <td>Вопрос 2</td>
+                    <td><input type="checkbox" name="q2"> Ответ 2.1</td>
+                    <td><input type="checkbox" name="q2"> Ответ 2.2</td>
+                </tr>
+                <tr>
+                    <td>Вопрос 3</td>
+                    <td colspan="2"><input type="text" name="q3"></td>
+                    <td><button type="button" onclick="openFile()">Обзор</button></td>
+                </tr>
+                <tr>
+                    <td>Вопрос 4</td>
+                    <td colspan="2">
+                        <select name="q4">
+                            <option>Ответ 4.1</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Вопрос 5</td>
+                    <td><input type="radio" name="q5"> Ответ 5.1</td>
+                    <td><input type="radio" name="q5"> Ответ 5.2</td>
+                </tr>
+                <tr>
+                    <td>Вопрос 6</td>
+                    <td colspan="3">
+                        <select name="q6">
+                            <option>Ответ 6.1</option>
+                            <option>Ответ 6.2</option>
+                            <option>Ответ 6.3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Дополнительная информация</td>
+                    <td colspan="3"><textarea name="additionalInfo" rows="4"></textarea></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
